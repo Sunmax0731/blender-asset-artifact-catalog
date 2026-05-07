@@ -1,0 +1,19 @@
+{
+  "name": "blender-asset-artifact-catalog",
+  "title": "素材・成果物カタログ",
+  "domain": "BlenderAddon",
+  "kind": "blender-addon",
+  "host": null,
+  "field": "Blender素材カタログ",
+  "audience": "Blender素材、成果物、納品履歴を再利用したい制作者",
+  "workflow": "素材名、成果物、用途、タグ、利用先、納品状態をカタログ化する。",
+  "requiredFields": [
+    "assetName",
+    "artifactType",
+    "usage",
+    "catalogTag"
+  ],
+  "warningField": "reuseStatusUnknown",
+  "warningMessage": "再利用可否または納品状態の確認が必要です。",
+  "qcdsTarget": "A-以上。closed alphaではS-を基準とする。"
+}

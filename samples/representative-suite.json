@@ -1,0 +1,108 @@
+[
+  {
+    "id": "happy-path",
+    "description": "必須項目がそろい、警告もない代表成功ケース。",
+    "input": {
+      "items": [
+        {
+          "id": "happy-path",
+          "assetName": "blender-asset-artifact-catalog-assethappy-path",
+          "artifactType": "blend",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready"
+        }
+      ]
+    },
+    "expected": {
+      "overall": "pass",
+      "counts": {
+        "pass": 1,
+        "warning": 0,
+        "fail": 0
+      }
+    }
+  },
+  {
+    "id": "missing-required",
+    "description": "必須項目が欠落し、失敗として扱うケース。",
+    "input": {
+      "items": [
+        {
+          "id": "missing-required",
+          "artifactType": "blend",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready"
+        }
+      ]
+    },
+    "expected": {
+      "overall": "fail",
+      "counts": {
+        "pass": 0,
+        "warning": 0,
+        "fail": 1
+      }
+    }
+  },
+  {
+    "id": "warning",
+    "description": "自動判定では進められるが、手動確認を要求するケース。",
+    "input": {
+      "items": [
+        {
+          "id": "warning",
+          "assetName": "blender-asset-artifact-catalog-assetwarning",
+          "artifactType": "blend",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready",
+          "reuseStatusUnknown": true
+        }
+      ]
+    },
+    "expected": {
+      "overall": "warning",
+      "counts": {
+        "pass": 0,
+        "warning": 1,
+        "fail": 0
+      }
+    }
+  },
+  {
+    "id": "mixed-batch",
+    "description": "成功、警告、失敗が混在するバッチ検証ケース。",
+    "input": {
+      "items": [
+        {
+          "id": "mixed-pass",
+          "assetName": "blender-asset-artifact-catalog-assetmixed-pass",
+          "artifactType": "blend",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready"
+        },
+        {
+          "id": "mixed-warning",
+          "assetName": "blender-asset-artifact-catalog-assetmixed-warning",
+          "artifactType": "blend",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready",
+          "reuseStatusUnknown": true
+        },
+        {
+          "id": "mixed-fail",
+          "assetName": "blender-asset-artifact-catalog-assetmixed-fail",
+          "usage": "gameplay",
+          "catalogTag": "alpha-ready"
+        }
+      ]
+    },
+    "expected": {
+      "overall": "fail",
+      "counts": {
+        "pass": 1,
+        "warning": 1,
+        "fail": 1
+      }
+    }
+  }
+]
