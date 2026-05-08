@@ -1,0 +1,11 @@
+{
+  "product": "blender-asset-artifact-catalog",
+  "title": "素材・成果物カタログ",
+  "domain": "BlenderAddon",
+  "ideaNo": 5,
+  "platformType": "blender-addon",
+  "expectedPublicTarget": "GitHub Release / BOOTH",
+  "browser": null,
+  "android": null,
+  "evidence": "dist/platform-runtime-gate-result.json"
+}
